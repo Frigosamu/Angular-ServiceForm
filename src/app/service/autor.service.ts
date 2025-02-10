@@ -4,7 +4,7 @@ import { count } from "rxjs";
 @Injectable({
   providedIn: 'root'
 })
-export class LoggerService {
+export class AutorService {
 
   countLog = 0;
   countWarn = 0;
