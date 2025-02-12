@@ -4,14 +4,14 @@ import { Empleado } from '../model/persona';
 import { Observable } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root'
+    providedIn: 'root'
 })
 export class EmpleadosService {
 
     private url = 'http://localhost:3000/empleados';
 
-  constructor(private http: HttpClient) { }
-  
+    constructor(private http: HttpClient) { }
+
     getEmpleados(): Observable<Empleado[]> {
         return this.http.get<Empleado[]>(this.url);
     }
