@@ -7,5 +7,6 @@ import { Component } from '@angular/core';
   styleUrl: './entrada.component.css'
 })
 export class EntradaComponent {
-
+//npm install -g json-server
+//json-server --watch db.json
 }

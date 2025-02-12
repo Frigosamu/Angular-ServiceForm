@@ -1,0 +1,52 @@
+{
+    "eventos": [
+        {
+            "id": 1,
+            "nombre": "Sumerfest",
+            "fecha": "2021-07-01",
+            "empleado": 1,
+            "descripcion": "Festival de verano",
+            "categoria": "log"
+        },
+        {
+            "id": 2,
+            "nombre": "Tech Expo",
+            "fecha": "2022-05-15",
+            "empleado": 2,
+            "descripcion": "Exposición de tecnología",
+            "categoria": "tech"
+        },
+        {
+            "id": 3,
+            "nombre": "Fiesta de Navidad",
+            "fecha": "2023-12-20",
+            "empleado": 3,
+            "descripcion": "Celebración navideña para empleados",
+            "categoria": "social"
+        }
+    ],
+    
+    "empleados": [
+        {
+            "id": 1,
+            "nombre": "Juan",
+            "apellido": "Perez",
+            "email": "a@a.com",
+            "departamento": "comidas"
+        },
+        {
+            "id": 2,
+            "nombre": "Maria",
+            "apellido": "Lopez",
+            "email": "maria.lopez@email.com",
+            "departamento": "tecnología"
+        },
+        {
+            "id": 3,
+            "nombre": "Carlos",
+            "apellido": "Ramirez",
+            "email": "carlos.ramirez@email.com",
+            "departamento": "recursos humanos"
+        }
+    ]
+}
