@@ -33,3 +33,4 @@ export class EventosService {
   }
 
 }
+//json-server --watch db.json
