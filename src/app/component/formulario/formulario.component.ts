@@ -1,29 +1,45 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { EmpleadosService } from '../../services/empleados.service';
 import { Empleado } from '../../model/persona';
 import { EventosService } from '../../services/eventos.service';
 import { Evento } from '../../model/evento';
 import { CommonModule } from '@angular/common';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
+import { BsDatepickerModule, BsLocaleService } from 'ngx-bootstrap/datepicker';
+import { defineLocale } from 'ngx-bootstrap/chronos';
+import { esLocale } from 'ngx-bootstrap/locale';
 import { ObservablesService } from '../../services/observables.service';
+
+defineLocale('es', esLocale);
 
 @Component({
   selector: 'app-formulario',
   imports: [CommonModule, ReactiveFormsModule, BsDatepickerModule],
   templateUrl: './formulario.component.html',
-  styleUrl: './formulario.component.css'
+  styleUrls: ['./formulario.component.css']
 })
-
-export class FormularioComponent {
+export class FormularioComponent implements OnInit {
   empleados: Empleado[] = [];
   eventos: Evento[] = [];
   form: FormGroup;
   nombre: string = '';
+/*   maxDate: Date;
+  minDate: Date;
+ */
+  constructor(
+    private empleadosService: EmpleadosService,
+    private eventosService: EventosService,
+    private fb: FormBuilder,
+    private observablesService: ObservablesService,
+    private localeService: BsLocaleService
+  ) {
+/*     this.localeService.use('es');
+    this.maxDate = new Date();
+    this.minDate = new Date();
+    this.minDate.setMonth(this.minDate.getMonth() - 1); */
 
-  constructor(private empleadosService: EmpleadosService, private eventosService: EventosService, private fb: FormBuilder, private observablesService: ObservablesService) {
     this.form = this.fb.group({
-      empleado: [[Validators.required]],
+      empleado: ['', [Validators.required]],
       nombre: ['', [Validators.required]],
       descripcion: ['', [Validators.required]],
       categoria: ['', [Validators.required]],
@@ -35,23 +51,29 @@ export class FormularioComponent {
   ngOnInit(): void {
     this.empleadosService.getEmpleados().subscribe((empleados) => {
       this.empleados = empleados;
+
     });
     this.eventosService.getEventos().subscribe((eventos) => {
       this.eventos = eventos;
     });
-  }
 
-  addEvento(form: FormGroup) {
-    if (form.valid) {
-      this.eventosService.addEvento(form.value).subscribe(() => {
-        this.eventos.push(form.value);
-      });
+
+    if (typeof localStorage !== 'undefined') {
+      const storedEmpleado = localStorage.getItem('nameSelected');
+      
+      if (storedEmpleado) {
+        this.nombre = storedEmpleado;
+        this.form.patchValue({ empleado: this.nombre });
+        
+      }
+      
     }
   }
 
-  cambiarNombre(){
-    this.nombre =this.form.value.empleado;
+  cambiarNombre() {
+    this.nombre = this.form.value.empleado;
     this.observablesService.setNombreTitulo(this.nombre);
+    localStorage.setItem('nameSelected', this.nombre);
   }
 
   submit() {
@@ -68,12 +90,11 @@ export class FormularioComponent {
         creacion: now
       };
 
-      if(this.form.value.categoria === 'log'){
+      if (this.form.value.categoria === 'log') {
         this.observablesService.log(`LOG actualizado`);
-      } else if(this.form.value.categoria === 'warn'){
+      } else if (this.form.value.categoria === 'warn') {
         this.observablesService.warn(`WARN actualizado`);
-      }
-      else if(this.form.value.categoria === 'error'){
+      } else if (this.form.value.categoria === 'error') {
         this.observablesService.error(`ERROR actualizado`);
       }
 

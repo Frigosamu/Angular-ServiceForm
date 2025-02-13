@@ -28,13 +28,40 @@
       "creacion": "2025-02-10T14:30:00Z"
     },
     {
-      "id": 4,
+      "id": "4",
       "empleadoNombre": "Juan",
       "nombre": "i",
       "descripcion": "ñ",
       "categoria": "error",
       "fecha": "2005-03-12",
       "creacion": "2025-02-13T08:43:15.459Z"
+    },
+    {
+      "id": "5",
+      "empleadoNombre": "Carlos",
+      "nombre": "1",
+      "descripcion": "2",
+      "categoria": "log",
+      "fecha": "3333-01-01",
+      "creacion": "2025-02-13T17:44:18.951Z"
+    },
+    {
+      "id": "6",
+      "empleadoNombre": "Carlos",
+      "nombre": "1",
+      "descripcion": "2",
+      "categoria": "warn",
+      "fecha": "2027-02-01",
+      "creacion": "2025-02-13T17:59:59.521Z"
+    },
+    {
+      "id": 7,
+      "empleadoNombre": "Juan",
+      "nombre": "3123",
+      "descripcion": "123123",
+      "categoria": "log",
+      "fecha": "2000-02-01",
+      "creacion": "2025-02-13T18:23:14.325Z"
     }
   ],
   "empleados": [
