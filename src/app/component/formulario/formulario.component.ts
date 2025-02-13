@@ -14,6 +14,7 @@ import { ObservablesService } from '../../services/observables.service';
   templateUrl: './formulario.component.html',
   styleUrl: './formulario.component.css'
 })
+
 export class FormularioComponent {
   empleados: Empleado[] = [];
   eventos: Evento[] = [];
