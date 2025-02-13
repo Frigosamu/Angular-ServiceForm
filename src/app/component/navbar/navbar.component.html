@@ -3,27 +3,30 @@
     <div class="container-fluid d-flex justify-content-between align-items-center">
         <!-- Menú de navegación -->
         <div class="d-flex gap-3">
+            <a class="btn btn-light text-dark rounded-pill shadow-sm" [routerLink]="['/']">
+                <i class="bi bi-plus-circle me-1"></i>Inicio
+            </a>
             <a class="btn btn-light text-dark rounded-pill shadow-sm" [routerLink]="['/formulario']">
-                <i class="bi bi-plus-circle me-1"></i> Nuevo Evento
+                <i class="bi bi-plus-circle me-1"></i>Nuevo Evento
             </a>
             <a class="btn btn-dark text-white rounded-pill shadow-sm" [routerLink]="['/listado']">
-                <i class="bi bi-list-ul me-1"></i> Listado de Eventos
+                <i class="bi bi-list-ul me-1"></i>Listado de Eventos
             </a>
         </div>
         <!-- Contador de eventos -->
-        <!-- <div class="d-flex align-items-center gap-3">
+        <div class="d-flex align-items-center gap-3">
             <a class="d-flex align-items-center btn btn-transparent">
                 <i class="bi bi-clipboard-check text-success fs-4 me-1"></i>
-                <span class="fw-bold text-success">{{ ordinario }}</span>
+                <span class="fw-bold text-success">{{ log }}</span>
             </a>
             <a class="d-flex align-items-center btn btn-transparent">
                 <i class="bi bi-exclamation-triangle-fill text-warning fs-4 me-1"></i>
-                <span class="fw-bold text-warning">{{ incidencia }}</span>
+                <span class="fw-bold text-warning">{{ warn }}</span>
             </a>
             <a class="d-flex align-items-center btn btn-transparent">
                 <i class="bi bi-exclamation-diamond-fill text-danger fs-4 me-1"></i>
-                <span class="fw-bold text-danger">{{ alerta }}</span>
+                <span class="fw-bold text-danger">{{ error }}</span>
             </a>
-        </div> -->
+        </div>
     </div>
 </nav>

@@ -1,1 +1,62 @@
-<p>Works!</p>
+<form [formGroup]="form" (submit)="submit()" class="container my-5">
+    <div class="card shadow-lg p-4 bg-white col-lg-8 mx-auto">
+      <h2 class="mb-4 text-center bg-dark text-light p-3 rounded">Registro de Eventos {{ nombre }}</h2>
+  
+      <div class="row row-cols-2 g-4">
+        <div class="col">
+          <label for="empleado" class="form-label fw-bold">Empleado:</label>
+          <select id="empleado" name="empleado" formControlName="empleado" (change)="cambiarNombre()" class="form-select">
+            <option value="">Seleccione un empleado</option>
+            @for (empleado of empleados; track empleado.id) {
+            <option value="{{empleado.nombre}}">{{empleado.nombre}}</option>
+            }
+          </select>
+        </div>
+  
+        <div class="col">
+          <label for="fecha" class="form-label fw-bold">Fecha:</label>
+          <input type="date" id="fecha" class="form-control" formControlName="fecha">
+        </div>
+      </div>
+  
+      <div class="card p-3 mt-4 bg-light border-primary">
+        <h5 class="card-title text-center text-primary">Datos del Evento</h5>
+  
+        <div class="mb-3">
+          <label class="form-label fw-bold">Categoría:</label>
+          <div class="row">
+            <div class="col d-flex align-items-center">
+              <input type="radio" id="log" value="log" name="categoria" class="form-check-input me-2"
+                formControlName="categoria">
+              <label for="log" class="form-check-label"> Log </label>
+            </div>
+            <div class="col d-flex align-items-center">
+              <input type="radio" id="warn" value="warn" name="categoria" class="form-check-input me-2"
+                formControlName="categoria">
+              <label for="warn" class="form-check-label"> Warn </label>
+            </div>
+            <div class="col d-flex align-items-center">
+              <input type="radio" id="error" value="error" name="categoria" class="form-check-input me-2"
+                formControlName="categoria">
+              <label for="error" class="form-check-label"> Error </label>
+            </div>
+          </div>
+        </div>
+  
+        <div class="mb-3">
+          <label for="titulo" class="form-label fw-bold">Título:</label>
+          <input type="text" id="titulo" class="form-control" placeholder="Título" formControlName="nombre">
+        </div>
+  
+        <div class="mb-3">
+          <label for="descripcion" class="form-label fw-bold">Descripción:</label>
+          <textarea id="descripcion" class="form-control" rows="3" formControlName="descripcion"></textarea>
+        </div>
+      </div>
+  
+      <div class="text-center mt-4">
+        <button type="submit" class="btn btn-light btn-lg btn btn-outline-secondary">Registrar Evento</button>
+      </div>
+    </div>
+  </form>
+  
