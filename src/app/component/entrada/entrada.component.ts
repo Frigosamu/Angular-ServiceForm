@@ -10,4 +10,6 @@ export class EntradaComponent {
 //npm install -g json-server
 //json-server --watch db.json
 // npm install concurrently --save-dev
+//ng g c crear componente
+//ng g s crear servicio
 }
