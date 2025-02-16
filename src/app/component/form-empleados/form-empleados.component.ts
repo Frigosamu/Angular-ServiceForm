@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
-import { EmpleadosService } from '../services/empleados.service';
-import { Empleado } from '../model/persona';
+import { EmpleadosService } from '../../services/empleados.service';
+import { Empleado } from '../../model/persona';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { ObservablesService } from '../services/observables.service';
+import { ObservablesService } from '../../services/observables.service';
 
 @Component({
   selector: 'app-form-empleados',
