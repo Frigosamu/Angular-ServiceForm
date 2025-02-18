@@ -4,7 +4,7 @@
   "scripts": {
     "start:json": "json-server db.json",
     "ng": "ng",
-    "startViernes": "concurrently \"json-server db.json\" \"ng serve\"",
+    "startx2": "concurrently \"json-server db.json\" \"ng serve\"",
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",

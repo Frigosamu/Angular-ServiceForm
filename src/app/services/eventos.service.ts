@@ -32,5 +32,17 @@ export class EventosService {
     return this.http.delete(`${this.url}/${id}`);
   }
 
+  getLogs() {
+    return this.http.get<Evento[]>(`${this.url}?categoria=log`);
+  }
+
+  getWarns() {
+    return this.http.get<Evento[]>(`${this.url}?categoria=warn`);
+  }
+
+  getErrors() {
+    return this.http.get<Evento[]>(`${this.url}?categoria=error`);
+  }
+
 }
 //json-server --watch db.json

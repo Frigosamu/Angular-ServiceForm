@@ -1,0 +1,38 @@
+<form [formGroup]="form" (submit)="submit()" class="container my-5">
+    <div class="card shadow-lg p-4 bg-white col-lg-8 mx-auto">
+      <h2 class="mb-4 text-center bg-dark text-light p-3 rounded">Registro de Empleados</h2>
+  
+      <div class="card p-3 bg-light border-primary">
+        <h5 class="card-title text-center text-primary">Datos del Empleado</h5>
+  
+        <div class="row row-cols-2 g-4">
+          <div class="col">
+            <label for="nombre" class="form-label fw-bold">Nombre:</label>
+            <input type="text" id="nombre" class="form-control" placeholder="Nombre" formControlName="nombre">
+          </div>
+  
+          <div class="col">
+            <label for="apellido" class="form-label fw-bold">Apellido:</label>
+            <input type="text" id="apellido" class="form-control" placeholder="Apellido" formControlName="apellido">
+          </div>
+        </div>
+  
+        <div class="row row-cols-2 g-4 mt-3">
+          <div class="col">
+            <label for="email" class="form-label fw-bold">Email:</label>
+            <input type="email" id="email" class="form-control" placeholder="Email" formControlName="email">
+          </div>
+  
+          <div class="col">
+            <label for="departamento" class="form-label fw-bold">Departamento:</label>
+            <input type="text" id="departamento" class="form-control" placeholder="Departamento" formControlName="departamento">
+          </div>
+        </div>
+      </div>
+  
+      <div class="text-center mt-4">
+        <button type="submit" class="btn btn-light btn-lg btn btn-outline-secondary">Registrar Empleado</button>
+      </div>
+    </div>
+  </form>
+  

@@ -2,66 +2,21 @@
   "eventos": [
     {
       "id": "1",
-      "nombre": "Sumerfest",
-      "fecha": "2021-07-01",
-      "empleado": 1,
-      "descripcion": "Festival de verano",
+      "empleadoNombre": "Carlos",
+      "nombre": "Log Event",
+      "descripcion": "log log log",
       "categoria": "log",
-      "creacion": "2025-02-10T14:30:00Z"
-    },
-    {
-      "id": "2",
-      "nombre": "Tech Expo",
-      "fecha": "2022-05-15",
-      "empleado": 2,
-      "descripcion": "Exposición de tecnología",
-      "categoria": "warn",
-      "creacion": "2025-02-10T14:30:00Z"
-    },
-    {
-      "id": "3",
-      "nombre": "Fiesta de Navidad",
-      "fecha": "2023-12-20",
-      "empleado": 3,
-      "descripcion": "Celebración navideña para empleados",
-      "categoria": "error",
-      "creacion": "2025-02-10T14:30:00Z"
+      "fecha": "2025-02-05",
+      "creacion": "2025-02-13T17:54:15.183Z"
     },
     {
       "id": "4",
-      "empleadoNombre": "Juan",
-      "nombre": "i",
-      "descripcion": "ñ",
+      "empleadoNombre": "Maria",
+      "nombre": "Warn",
+      "descripcion": "warn",
       "categoria": "error",
-      "fecha": "2005-03-12",
-      "creacion": "2025-02-13T08:43:15.459Z"
-    },
-    {
-      "id": "5",
-      "empleadoNombre": "Carlos",
-      "nombre": "1",
-      "descripcion": "2",
-      "categoria": "log",
-      "fecha": "3333-01-01",
-      "creacion": "2025-02-13T17:44:18.951Z"
-    },
-    {
-      "id": "6",
-      "empleadoNombre": "Carlos",
-      "nombre": "1",
-      "descripcion": "2",
-      "categoria": "warn",
-      "fecha": "2027-02-01",
-      "creacion": "2025-02-13T17:59:59.521Z"
-    },
-    {
-      "id": 7,
-      "empleadoNombre": "Juan",
-      "nombre": "3123",
-      "descripcion": "123123",
-      "categoria": "log",
-      "fecha": "2000-02-01",
-      "creacion": "2025-02-13T18:23:14.325Z"
+      "fecha": "2025-02-15",
+      "creacion": "2025-02-18T12:21:41.780Z"
     }
   ],
   "empleados": [
@@ -85,6 +40,27 @@
       "apellido": "Ramirez",
       "email": "carlos.ramirez@email.com",
       "departamento": "recursos humanos"
+    },
+    {
+      "id": "4",
+      "nombre": "Cabra",
+      "apellido": "Perez",
+      "email": "cabrape@gmaill.com",
+      "departamento": "tres"
+    },
+    {
+      "id": "5",
+      "nombre": "Paco",
+      "apellido": "Leon",
+      "email": "P.leon@prorsd.com",
+      "departamento": "Transeunte"
+    },
+    {
+      "id": 6,
+      "nombre": "Enzo",
+      "apellido": "Ferreira",
+      "email": "enzo@gmail.com",
+      "departamento": "pepe"
     }
   ]
 }

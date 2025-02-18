@@ -10,6 +10,7 @@
           <th>Título</th>
           <th>Descripción</th>
           <th>Fecha</th>
+          <th>Acciones</th>
         </tr>
       </thead>
       <tbody class="text-center">
@@ -30,6 +31,9 @@
           <td class="fw-bold">{{ evento.nombre }}</td>
           <td>{{ evento.descripcion }}</td>
           <td>{{ evento.fecha }}</td>
+          <td>
+            <a class="btn btn-danger btn-sm" (click)="eliminarDato(evento.id)"></a>
+          </td>
         </tr>
         }
       </tbody>
