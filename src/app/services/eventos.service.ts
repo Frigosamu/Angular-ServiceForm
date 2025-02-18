@@ -16,7 +16,7 @@ export class EventosService {
     return this.http.get<Evento[]>(this.url);
   }
 
-  getEvento(id: number) {
+  getEvento(id: string) {
     return this.http.get<Evento>(`${this.url}/${id}`);
   }
 
@@ -28,7 +28,7 @@ export class EventosService {
     return this.http.put(`${this.url}/${evento.id}`, evento);
   }
 
-  deleteEvento(id: number) {
+  deleteEvento(id: string) {
     return this.http.delete(`${this.url}/${id}`);
   }
 

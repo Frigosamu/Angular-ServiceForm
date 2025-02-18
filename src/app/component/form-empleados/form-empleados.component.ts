@@ -31,7 +31,7 @@ export class FormEmpleadosComponent {
     if (this.form.valid) {
 
       const nuevoEmpleado: Empleado = {
-        id: this.empleados.length + 1,
+        id: (this.empleados.length + 1).toString(),
         nombre: this.form.value.nombre,
         apellido: this.form.value.apellido,
         email: this.form.value.email,

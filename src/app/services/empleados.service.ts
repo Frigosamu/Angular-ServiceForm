@@ -16,7 +16,7 @@ export class EmpleadosService {
         return this.http.get<Empleado[]>(this.url);
     }
 
-    getEmpleado(id: number): Observable<Empleado> {
+    getEmpleado(id: string): Observable<Empleado> {
         return this.http.get<Empleado>(`${this.url}/${id}`);
     }
 
@@ -28,7 +28,7 @@ export class EmpleadosService {
         return this.http.put(`${this.url}/${empleado.id}`, empleado);
     }
 
-    deleteEmpleado(id: number): Observable<any> {
+    deleteEmpleado(id: string): Observable<any> {
         return this.http.delete(`${this.url}/${id}`);
     }
 

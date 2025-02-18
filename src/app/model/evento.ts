@@ -3,7 +3,7 @@ import { Empleado } from "./persona";
 export interface Evento {
     empleadoNombre: string;
     
-    id: number;
+    id: string;
     nombre: string;
     fecha: string;
     descripcion: string;

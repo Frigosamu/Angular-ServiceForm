@@ -2,21 +2,30 @@
   "eventos": [
     {
       "id": "1",
-      "empleadoNombre": "Carlos",
-      "nombre": "Log Event",
-      "descripcion": "log log log",
+      "empleadoNombre": "Maria",
+      "nombre": "primero",
+      "descripcion": "es el 1º",
       "categoria": "log",
-      "fecha": "2025-02-05",
-      "creacion": "2025-02-13T17:54:15.183Z"
+      "fecha": "2030-02-01",
+      "creacion": "2025-02-18T13:26:21.834Z"
     },
     {
-      "id": "4",
-      "empleadoNombre": "Maria",
-      "nombre": "Warn",
-      "descripcion": "warn",
+      "id": "2",
+      "empleadoNombre": "Carlos",
+      "nombre": "segundo",
+      "descripcion": "es el 2º",
+      "categoria": "warn",
+      "fecha": "2002-02-01",
+      "creacion": "2025-02-18T13:26:42.232Z"
+    },
+    {
+      "id": "3",
+      "empleadoNombre": "Paco",
+      "nombre": "tercero",
+      "descripcion": "es el tercero",
       "categoria": "error",
-      "fecha": "2025-02-15",
-      "creacion": "2025-02-18T12:21:41.780Z"
+      "fecha": "2000-03-01",
+      "creacion": "2025-02-18T13:26:59.944Z"
     }
   ],
   "empleados": [
@@ -56,11 +65,18 @@
       "departamento": "Transeunte"
     },
     {
-      "id": 6,
+      "id": "6",
       "nombre": "Enzo",
       "apellido": "Ferreira",
       "email": "enzo@gmail.com",
       "departamento": "pepe"
+    },
+    {
+      "id": "7",
+      "nombre": "aaa",
+      "apellido": "eee",
+      "email": "e@e.e",
+      "departamento": "we"
     }
   ]
 }
