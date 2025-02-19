@@ -25,6 +25,16 @@ export class FormEmpleadosComponent {
 
   ngOnInit() {
     this.empleadosService.getEmpleados().subscribe(empleados => this.empleados = empleados);
+
+    const storedForm = localStorage.getItem('formEmpleadosData');
+    if (storedForm) {
+      this.form.patchValue(JSON.parse(storedForm));
+    }
+
+    this.form.valueChanges.subscribe(value => {
+      localStorage.setItem('formEmpleadosData', JSON.stringify(value));
+    });
+    
   }
 
   submit() {
@@ -44,6 +54,10 @@ export class FormEmpleadosComponent {
         this.form.reset();
       });
     }
+
+    this.form.valueChanges.subscribe(value => {
+      localStorage.setItem('formEmpleadosData', JSON.stringify(value));
+    });
   }
 
 }

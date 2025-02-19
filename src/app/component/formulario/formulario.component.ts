@@ -14,6 +14,7 @@ defineLocale('es', esLocale);
 
 @Component({
   selector: 'app-formulario',
+  standalone: true,
   imports: [CommonModule, ReactiveFormsModule, BsDatepickerModule],
   templateUrl: './formulario.component.html',
   styleUrls: ['./formulario.component.css']
@@ -23,9 +24,7 @@ export class FormularioComponent implements OnInit {
   eventos: Evento[] = [];
   form: FormGroup;
   nombre: string = '';
-/*   maxDate: Date;
-  minDate: Date;
- */
+
   constructor(
     private empleadosService: EmpleadosService,
     private eventosService: EventosService,
@@ -33,11 +32,6 @@ export class FormularioComponent implements OnInit {
     private observablesService: ObservablesService,
     private localeService: BsLocaleService
   ) {
-/*     this.localeService.use('es');
-    this.maxDate = new Date();
-    this.minDate = new Date();
-    this.minDate.setMonth(this.minDate.getMonth() - 1); */
-
     this.form = this.fb.group({
       empleado: ['', [Validators.required]],
       nombre: ['', [Validators.required]],
@@ -51,23 +45,26 @@ export class FormularioComponent implements OnInit {
   ngOnInit(): void {
     this.empleadosService.getEmpleados().subscribe((empleados) => {
       this.empleados = empleados;
-
     });
+
     this.eventosService.getEventos().subscribe((eventos) => {
       this.eventos = eventos;
     });
 
-
-    if (typeof localStorage !== 'undefined') {
-      const storedEmpleado = localStorage.getItem('nameSelected');
-      
-      if (storedEmpleado) {
-        this.nombre = storedEmpleado;
-        this.form.patchValue({ empleado: this.nombre });
-        
-      }
-      
+    const storedForm = localStorage.getItem('formularioData');
+    if (storedForm) {
+      this.form.patchValue(JSON.parse(storedForm));
     }
+
+    const storedEmpleado = localStorage.getItem('nameSelected');
+    if (storedEmpleado) {
+      this.nombre = storedEmpleado;
+      this.form.patchValue({ empleado: this.nombre });
+    }
+
+    this.form.valueChanges.subscribe(value => {
+      localStorage.setItem('formularioData', JSON.stringify(value));
+    });
   }
 
   cambiarNombre() {
@@ -91,16 +88,17 @@ export class FormularioComponent implements OnInit {
       };
 
       if (this.form.value.categoria === 'log') {
-        this.observablesService.log(`LOG actualizado`);
+        this.observablesService.log('LOG actualizado');
       } else if (this.form.value.categoria === 'warn') {
-        this.observablesService.warn(`WARN actualizado`);
+        this.observablesService.warn('WARN actualizado');
       } else if (this.form.value.categoria === 'error') {
-        this.observablesService.error(`ERROR actualizado`);
+        this.observablesService.error('ERROR actualizado');
       }
 
       this.eventosService.addEvento(nuevoRegistro).subscribe(() => {
         this.eventos.push(nuevoRegistro);
         this.form.reset();
+        localStorage.removeItem('formularioData');
       });
     } else {
       alert('Por favor, rellene todos los campos');
